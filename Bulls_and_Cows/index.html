@@ -1,0 +1,15 @@
+<html>
+	<head>
+	<script src="js/bulls_and_cows.js"></script>
+	</head>
+	<body>
+		<input id="input_field_number_of_digits" value="number of digits" type="text">
+		<br>
+		<input id="input_field_for_numbers" value="guess the number" type="text" onkeydown="if (event.keyCode == 13) document.getElementById('guess').click()">
+		<button id="guess" onclick="guess()">Guess</button>
+		<button onclick="newGame()">New Game</button>
+		<button onclick="clean()">Clean</button>
+		<button onclick="surrender()">Surrender</button>
+		<p id="log"></p>
+	</body>
+</html>
