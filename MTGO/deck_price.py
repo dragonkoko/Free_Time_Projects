@@ -22,15 +22,16 @@ def main():
     cards = get_deck("rancor.txt")
     print cards
     cost = 0.00
+    exclude_list = ["Creature (", "Instant (", "Artifact (", "Land (", " Cards", "Enchantment (", "Sorcery (", "Planeswalker ("]
     for card in cards:
-        card_name = card[2:]
-        card_quantity = card[0]
-        print card_name+" quantity: "+card_quantity
-        price = get_price(card_name, int(card_quantity))
-        print price
-        cost += price
+        if not any(s in card for s in exclude_list):
+            card_name = card[2:]
+            card_quantity = card[0]
+            print card_name+" quantity: "+card_quantity
+            price = get_price(card_name, int(card_quantity))
+            print price
+            cost += price
     print cost
 
 if __name__ == "__main__":
     main()
-    
