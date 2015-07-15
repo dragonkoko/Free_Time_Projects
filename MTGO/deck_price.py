@@ -8,8 +8,13 @@ def get_price(card_name, quantity):
         price_all = float(take_price)*quantity
         return price_all
     except:
-        print card_name+" failed to check price!"
-        return 0.00
+        try:
+            take_price = scraped_page.split("Card Results")[1].split(card_name)[5].split("<td class=\"price\">$")[1].split("</td>")[0]
+            price_all = float(take_price)*quantity
+            return price_all
+        except:
+            print card_name+" failed to check price!"
+            return 0.00
 
 def get_deck(file_name):
     deck_file = open(file_name, "r")
