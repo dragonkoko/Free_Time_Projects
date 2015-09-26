@@ -1,0 +1,4 @@
+from django.shortcuts import render
+
+def index(request):
+    return HttpResponse("Hello, world, Polls but Dr Booms is broken!")
