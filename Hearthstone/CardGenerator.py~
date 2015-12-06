@@ -72,7 +72,6 @@ class CardGenerator:
         points = 0
         pos = 0
         damage = 0
-        damage_to
         if('<b>' in card_effect):
             card_effect = card_effect.replace('<b>', '')
             card_effect = card_effect.replace('</b>', '')
@@ -86,8 +85,7 @@ class CardGenerator:
             if('Deal' in effect):
                 pos = effect.index('Deal')
                 damage = int(float(effect[pos+1]))
-                try:
-                    
+                print damage
                 
         print effect
         print points
