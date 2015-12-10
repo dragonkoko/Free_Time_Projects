@@ -66,7 +66,6 @@ class MyFrame(wx.Frame):
                             modified_data[pos_y][pos_x] = 1
                         pos_y += 1
                     else:
-                        pos_y -= 1
                         mode = 2
                 if mode == 2:
                     p1 = int(structured_data[pos_y-1][pos_x])
