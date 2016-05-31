@@ -23,7 +23,6 @@ def get_deck(file_name):
     return cards
 
 def main():
-    print "gaben"
     cards = get_deck("rancor.txt")
     print cards
     cost = 0.00
