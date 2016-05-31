@@ -23,7 +23,6 @@ def get_deck(file_name):
     return cards
 
 def main():
-    print "gaben"
     cards = get_deck("Export.dek")
     cost = 0.00
     exclude_list = ["Creature (", "Instant (", "Artifact (", "Land (", " Cards", "Enchantment (", "Sorcery (", "Planeswalker ("]
