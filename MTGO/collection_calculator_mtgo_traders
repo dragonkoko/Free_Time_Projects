@@ -28,16 +28,18 @@ def main():
     exclude_list = ["Creature (", "Instant (", "Artifact (", "Land (", " Cards", "Enchantment (", "Sorcery (", "Planeswalker ("]
     for card in cards:
         if not any(s in card for s in exclude_list):
-            card_name = card.split("Name=\"")[1]
-            card_name = card_name.split("\"")[0]
-            card_quantity = card.split("Quantity=\"")[1]
-            card_quantity = card_quantity.split("\"")[0]
-            print card_name+" quantity: "+card_quantity
-            price = get_price(card_name, int(card_quantity))
-            print price
-            cost += price
+            try:
+                card_name = card.split("Name=\"")[1]
+                card_name = card_name.split("\"")[0]
+                card_quantity = card.split("Quantity=\"")[1]
+                card_quantity = card_quantity.split("\"")[0]
+                print card_name+" quantity: "+card_quantity
+                price = get_price(card_name, int(card_quantity))
+                print price
+                cost += price
+            except:
+                continue
     print cost
 
 if __name__ == "__main__":
     main()
-
